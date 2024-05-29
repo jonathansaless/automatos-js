@@ -56,7 +56,6 @@
     </h5>
     <br />
   </header>
-
   <ol>
     <li>
       Considere as linguagens definidas pelas expressões regulares a seguir. Implemente, para
@@ -64,48 +63,47 @@
       linguagem. Esse autômato não deve conter não-determinismos, transições em vazio, estados
       inacessíveis e nem estados inúteis.<br />
     </li>
-
-    <div class="mb-3 row">
-      <label for="name" class="col-sm-2 col-form-label">a) (ab*c*)*</label>
+    <div class="mb-4 row">
+      <label for="item-a" class="col-sm-2 col-form-label">a) (ab*c*)*</label>
       <div class="col-sm-6">
-        <input class="form-control" type="text" id="name" />
+        <input class="form-control" type="text" id="item-a" />
       </div>
       <div class="col-sm-2">
         <b>
-          <div id="nameError" class="form-control-plaintext"></div>
+          <div id="item-a-error" class="form-control-plaintext"></div>
         </b>
       </div>
     </div>
     <div class="mb-3 row">
-      <label for="name" class="col-sm-2 col-form-label">b) aaa(b|c)*|(b|c)*aaa</label>
+      <label for="item-b" class="col-sm-2 col-form-label">b) aaa(b|c)*|(b|c)*aaa</label>
       <div class="col-sm-6">
-        <input class="form-control" type="text" id="name" />
+        <input class="form-control" type="text" id="item-b" />
       </div>
       <div class="col-sm-2">
         <b>
-          <div id="nameError" class="form-control-plaintext"></div>
+          <div id="item-b-error" class="form-control-plaintext"></div>
         </b>
       </div>
     </div>
     <div class="mb-3 row">
-      <label for="name" class="col-sm-2 col-form-label">c) a*b|ab*</label>
+      <label for="item-c" class="col-sm-2 col-form-label">c) a*b|ab*</label>
       <div class="col-sm-6">
-        <input class="form-control" type="text" id="name" />
+        <input class="form-control" type="text" id="item-c" />
       </div>
       <div class="col-sm-2">
         <b>
-          <div id="nameError" class="form-control-plaintext"></div>
+          <div id="item-c-error" class="form-control-plaintext"></div>
         </b>
       </div>
     </div>
     <div class="mb-3 row">
-      <label for="name" class="col-sm-2 col-form-label">d) a*b*(a|ac*)</label>
+      <label for="item-d" class="col-sm-2 col-form-label">d) a*b*(a|ac*)</label>
       <div class="col-sm-6">
-        <input class="form-control" type="text" id="name" />
+        <input class="form-control" type="text" id="item-d" />
       </div>
       <div class="col-sm-2">
         <b>
-          <div id="nameError" class="form-control-plaintext"></div>
+          <div id="item-d-error" class="form-control-plaintext"></div>
         </b>
       </div>
     </div>
@@ -116,13 +114,13 @@
       palavra.
     </li>
     <div class="mb-3 row">
-      <label for="email" class="col-sm-1 col-form-label">T:</label>
+      <label for="q2" class="col-sm-1 col-form-label">T:</label>
       <div class="col-sm-6">
-        <input class="form-control" type="text" id="email" />
+        <input class="form-control" type="text" id="q2" />
       </div>
       <div class="col-sm-2">
         <b>
-          <div id="emailError" class="form-control-plaintext"></div>
+          <div id="q2Error" class="form-control-plaintext"></div>
         </b>
       </div>
     </div>
@@ -133,20 +131,20 @@
       totalizar 1 real ou mais. Cada moeda inserida deverá corresponder a uma de duas saídas: 0,
       se uma lata não pode ser (ainda) liberada, ou 1, se uma lata deve ser liberada.
       <div class="mb-3 row">
-        <label for="senha" class="col-sm-1 col-form-label">Exemplo:</label>
+        <label for="q3" class="col-sm-1 col-form-label">Exemplo:</label>
         <div class="col-sm-6">
-          <input class="form-control" type="text" id="senha" />
+          <input class="form-control" type="text" id="q3" />
         </div>
         <div class="col-sm-2">
           <b>
-            <div id="senhaError" class="form-control-plaintext"></div>
+            <div id="q3Error" class="form-control-plaintext"></div>
           </b>
         </div>
       </div>
       <hr />
     </li>
 
-    <script type="module" src="./js/listeners.js"></script>
+    <script type="module" src="./js/automatoCreations.js"></script>
 </body>
 
 </html>
