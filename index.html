@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./imgs/UFPA.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Trabalho Expressão Regular</title>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1>Expressões Regulares</h1>
+      </div>
+      <div class="nav-list">
+        <ul>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Questão 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="questao2.html" class="nav-link">Questão 2</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-menu-icon">
+        <button id="mobile-menu-button">
+          <img class="icon" src="./imgs/menu.svg" alt="" />
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Questão 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="questao2.html" class="nav-link">Questão 2</a>
+        </li>
+      </ul>
+    </div>
+    <script type="module" src="./js/mobilemenu.js"></script>
+    <header>
+      <img src="./imgs/UFPA.png" width="10%" />
+      <h5>
+        Universidade Federal do Pará<br />
+        Instituto de Ciências Exatas e Naturais<br />
+        Programa de Pós-Graduação em Ciência da Computação<br />
+        <b>Disciplina:</b> Teoria da Computação<br />
+        <b>Professor:</b> Reginaldo Santos<br />
+        <b>Equipe:</b> Jonathan Sales, Lindalvo Neto e Maria Líbia
+      </h5>
+      <br />
+    </header>
+
+    <ol>
+      <li>
+        Desenvolva, um conjunto de máscaras de validação, por de expressões
+        regulares, que obedecem as especificações prévias de cada campo dos
+        subitens. <br />
+        Considere os seguintes alfabetos:<br />
+        Σ = {a, b, c, …, z},<br />
+        Γ = {A, B, C, …, Z} e<br />
+        N = {0,1, 2, …, 9}.
+      </li>
+      <ul>
+        <li>
+          Nome, nome do meio e sobrenome:
+          <ol>
+            <li>
+              Nome, nome do meio e sobrenome devem vir separados por um espaço
+              apenas
+            </li>
+            <li>O nome do meio é opcional</li>
+            <li>Nome e sobrenome devem ser ambos não vazios</li>
+            <li>Não deve aceitar caracteres especiais ou números</li>
+            <li>
+              O primeiro símbolo do nome e sobrenome, e do nome do meio se
+              existir, deve ser do alfabeto Γ e os outros símbolos devem ser do
+              alfabeto Σ
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-1 col-form-label">Nome:</label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="name" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="nameError" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Email:
+          <ol>
+            <li>Sentenças devem conter um, e apenas um, símbolo “@”</li>
+            <li>
+              Excetuando o símbolo “@”, as sentenças possuem apenas símbolos de
+              Σ
+            </li>
+            <li>Sentenças não devem começar com o símbolo “@”</li>
+            <li>Sentenças devem terminar com a subcadeia “.com.br” ou “.br”</li>
+            <li>
+              Sentenças devem ter, pelo menos, um símbolo de Σ entre o símbolo
+              “@” e a subcadeia “.com.br” ou a subcadeia “.br”
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-1 col-form-label">Email:</label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="email" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="emailError" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Senha:
+          <ol>
+            <li>Sentenças podem conter símbolos de Σ ∪ Γ ∪ N</li>
+            <li>Sentenças devem ter pelo menos um símbolo de Γ e outro de N</li>
+            <li>Sentenças devem ter comprimento igual a 8</li>
+          </ol>
+          <div class="mb-3 row">
+            <label for="senha" class="col-sm-1 col-form-label">Senha:</label>
+            <div class="col-sm-6">
+              <input class="form-control" type="text" id="senha" />
+            </div>
+            <div class="col-sm-2">
+              <b>
+                <div id="senhaError" class="form-control-plaintext"></div>
+              </b>
+            </div>
+          </div>
+          <hr />
+        </li>
+
+        <li>
+          CPF:
+          <ol>
+            <li>
+              Sentenças devem ter o formato <b>xxx.xxx.xxx-xx</b>, onde x ∈ N
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="cpf" class="col-sm-1 col-form-label">CPF:</label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="cpf" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="cpfError" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Telefone:
+          <ol>
+            <li>
+              Sentenças devem ter um dos formatos seguintes:<br />
+              (xx) 9xxxx-xxxx<br />
+              (xx) 9xxxxxxxx<br />
+              xx 9xxxxxxxx<br />
+              onde x ∈ N.
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="telefone" class="col-sm-1 col-form-label"
+            >Telefone:</label
+          >
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="telefone" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="telefoneError" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Data e Horário:
+          <ol>
+            <li>
+              Sentenças devem ter o formato dd/mm/aaaa hh:mm:ss, onde d, m, a,
+              h, m, s ∈ N.
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="datahora" class="col-sm-1 col-form-label"
+            >Data e Horário:</label
+          >
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="datahora" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="datahoraError" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Número real com ou sem sinal::
+          <ol>
+            <li>
+              Sentenças devem começar com um dos símbolos do alfabeto {+, -, ε}
+            </li>
+            <li>
+              Em seguida, as sentenças devem ter, pelo menos, um símbolo do
+              alfabeto N
+            </li>
+            <li>
+              Em seguida, as sentenças devem ter, exatamente, um símbolo
+              separador “.”
+            </li>
+            <li>
+              Em seguida, as sentenças devem finalizar com, pelo menos, um
+              símbolo de N
+            </li>
+            <li>
+              Exceção: números sem a parte fracionária também devem ser aceitos
+            </li>
+          </ol>
+        </li>
+
+        <div class="mb-3 row">
+          <label for="numeroReal" class="col-sm-1 col-form-label"
+            >Número Real:</label
+          >
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="numeroReal" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="numeroRealError" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+      </ul>
+    </ol>
+    <script type="module" src="./js/listeners.js"></script>
+  </body>
+</html>
