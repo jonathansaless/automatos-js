@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho Expressão Regular</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="logo">
+        <h1>Expressões Regulares</h1>
+      </div>
+      <div class="nav-list">
+        <ul>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Questão 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="questao2.html" class="nav-link">Questão 2</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-menu-icon">
+        <button id="mobile-menu-button">
+          <img class="icon" src="./imgs/menu.svg" alt="" />
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Questão 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="questao2.html" class="nav-link">Questão 2</a>
+        </li>
+      </ul>
+    </div>
+    <script type="module" src="./js/mobilemenu.js"></script>
+    <header>
+      <img src="./imgs/UFPA.png" width="10%" />
+      <h5>
+        Universidade Federal do Pará<br />
+        Instituto de Ciências Exatas e Naturais<br />
+        Programa de Pós-Graduação em Ciência da Computação<br />
+        <b>Disciplina:</b> Teoria da Computação<br />
+        <b>Professor:</b> Reginaldo Santos<br />
+        <b>Equipe:</b> Jonathan Sales, Lindalvo Neto e Maria Líbia
+      </h5>
+      <br />
+    </header>
+    <ol>
+      <li>
+        Implemente, na linguagem de programação de sua preferência, os arranjos
+        familiares solicitados nos itens abaixo sobre o alfabeto Σ = {H, M, h,
+        m}, com significado:
+        <ul>
+          <li><b>H</b> representa um homem;</li>
+          <li><b>M</b> representa uma mulher;</li>
+          <li>
+            <b>h</b> representa um filho do sexo masculino (natural ou adotado);
+          </li>
+          <li>
+            <b>m</b> representa um filho do sexo feminino (natural ou adotado);
+          </li>
+        </ul>
+        A posição relativa de uma letra em relação às demais indica a idade
+        relativa daquele membro da família em relação aos demais (os mais novos
+        estão sempre à direita).
+      </li>
+      <ol type="a">
+        <li>
+          Casais heterossexuais mais velhos que os filhos com pelo menos duas
+          filhas mulheres, ou pelo menos um filho homem, ou ainda pelo menos
+          dois filhos homens e uma filha mulher.
+        </li>
+
+        <div class="mb-3 row">
+          <label for="item-a" class="col-sm-1 col-form-label">Arranjo: </label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="item-a" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="item-a-error" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+
+        <hr />
+        <li>
+          Casais heterossexuais mais velhos que os filhos e com uma quantidade
+          ímpar de filhas mulheres.
+        </li>
+
+        <div class="mb-3 row">
+          <label for="item-b" class="col-sm-1 col-form-label">Arranjo: </label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="item-b" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="item-b-error" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Casais heterossexuais mais velhos que os filhos, com a filha mais
+          velha mulher e o filho mais novo homem.
+        </li>
+
+        <div class="mb-3 row">
+          <label for="item-c" class="col-sm-1 col-form-label">Arranjo: </label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="item-c" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="item-c-error" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+
+        <hr />
+        <li>
+          Casais homossexuais mais velhos que os filhos, com pelo menos seis
+          filhos, em que os dois primeiros filhos formam um casal e os últimos
+          também.
+        </li>
+        <div class="mb-3 row">
+          <label for="item-d" class="col-sm-1 col-form-label">Arranjo</label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="item-d" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="item-d-error" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+
+        <hr />
+        <li>
+          Casais homossexuais mais velhos que os filhos, em que o sexo dos
+          filhos é alternado conforme a ordem de nascimento.
+        </li>
+        <div class="mb-3 row">
+          <label for="item-e" class="col-sm-1 col-form-label">Arranjo: </label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="item-e" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="item-e-error" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+
+        <hr />
+        <li>
+          Casais homossexuais mais velhos que os filhos, com qualquer quantidade
+          de filhos homens e mulheres, mas que não tiveram dois filhos homens
+          consecutivos.
+        </li>
+        <div class="mb-3 row">
+          <label for="item-f" class="col-sm-1 col-form-label">Arranjo: </label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="item-f" />
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <div id="item-f-error" class="form-control-plaintext"></div>
+            </b>
+          </div>
+        </div>
+
+        <hr />
+        <li>
+          Arranjo de no mínimo x∈ℕ e no máximo y∈ℕ, com x>0 , y>0 , e x≤y , de
+          adultos (Hs ou Ms) mais velhos que os filhos, com qualquer quantidade
+          de filhos homens e mulheres, mas que os três filhos mais novos não
+          foram homens.
+          <div class="mb-3 row">
+            <div>
+              <label for="x" class="col-sm-1 col-form-label">x:</label>
+              <div class="col-sm-1">
+                <input class="form-control" type="number" id="x" />
+              </div>
+            </div>
+            <div>
+              <label for="y" class="col-sm-1 col-form-label">y:</label>
+              <div class="col-sm-1">
+                <input class="form-control" type="number" id="y" />
+              </div>
+            </div>
+
+            <div>
+              <label for="item-g" class="col-sm-1 col-form-label"
+                >Arranjo:
+              </label>
+              <div class="col-sm-3">
+                <input class="form-control" type="text" id="item-g" />
+              </div>
+              <div class="col-sm-2">
+                <b>
+                  <div id="item-g-error" class="form-control-plaintext"></div>
+                </b>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </ol>
+    <script type="module" src="./js/listeners2.js"></script>
+  </body>
+</html>
