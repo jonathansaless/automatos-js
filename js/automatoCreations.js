@@ -114,6 +114,57 @@ function createAutomatonForItemB() {
   );
 }
 
+function createAutomatonForItemC() {
+  const states = ["q0", "q1", "q2", "q3", "q4"];
+  const alphabet = ["a", "b"];
+  const transitions = [
+    ["q0", "a", "q1"],
+    ["q0", "b", "q2"],
+    ["q1", "a", "q3"],
+    ["q1", "b", "q4"],
+    ["q3", "a", "q3"],
+    ["q3", "b", "q2"],
+    ["q4", "b", "q4"],
+  ];
+  const initialState = "q0";
+  const finalStates = ["q1", "q2", "q4"];
+
+  return new Automaton(
+    states,
+    alphabet,
+    transitions,
+    initialState,
+    finalStates
+  );
+}
+
+function createAutomatonForItemD() {
+  const states = ["q0", "q1", "q2", "q3", "q4", "q5"];
+  const alphabet = ["a", "b", "c"];
+  const transitions = [
+    ["q0", "a", "q1"],
+    ["q1", "a", "q3"],
+    ["q1", "c", "q2"],
+    ["q2", "c", "q2"],
+    ["q3", "a", "q3"],
+    ["q3", "b", "q4"],
+    ["q3", "c", "q2"],
+    ["q4", "b", "q4"],
+    ["q4", "a", "q5"],
+    ["q5", "c", "q2"],
+  ];
+  const initialState = "q0";
+  const finalStates = ["q1", "q2", "q3", "q5"];
+
+  return new Automaton(
+    states,
+    alphabet,
+    transitions,
+    initialState,
+    finalStates
+  );
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const automatonA = createAutomatonForItemA();
   const itemAInput = document.getElementById("item-a");
@@ -144,6 +195,38 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       itemBError.textContent = "Aceito!";
       itemBError.style.color = "green";
+    }
+  });
+
+  const automatonC = createAutomatonForItemC();
+  const itemCInput = document.getElementById("item-c");
+  const itemCError = document.getElementById("item-c-error");
+
+  itemCInput.addEventListener("input", () => {
+    const isValid = automatonC.process(itemCInput.value);
+
+    if (!isValid) {
+      itemCError.textContent = "Rejeitado!";
+      itemCError.style.color = "red";
+    } else {
+      itemCError.textContent = "Aceito!";
+      itemCError.style.color = "green";
+    }
+  });
+
+  const automatonD = createAutomatonForItemD();
+  const itemDInput = document.getElementById("item-d");
+  const itemDError = document.getElementById("item-d-error");
+
+  itemDInput.addEventListener("input", () => {
+    const isValid = automatonD.process(itemDInput.value);
+
+    if (!isValid) {
+      itemDError.textContent = "Rejeitado!";
+      itemDError.style.color = "red";
+    } else {
+      itemDError.textContent = "Aceito!";
+      itemDError.style.color = "green";
     }
   });
 });
