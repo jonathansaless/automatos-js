@@ -25,6 +25,9 @@
         <li class="nav-item">
           <a href="questao2.html" class="nav-link">Questão 2</a>
         </li>
+        <li class="nav-item">
+          <a href="questao3.html" class="nav-link">Questão 3</a>
+        </li>
       </ul>
     </div>
     <div class="mobile-menu-icon">
@@ -41,6 +44,9 @@
       <li class="nav-item">
         <a href="questao2.html" class="nav-link">Questão 2</a>
       </li>
+      <li class="nav-item">
+        <a href="questao3.html" class="nav-link">Questão 3</a>
+      </li>
     </ul>
   </div>
   <script type="module" src="./js/mobilemenu.js"></script>
@@ -56,14 +62,11 @@
     </h5>
     <br />
   </header>
-  <ol>
-    <li>
-      Considere as linguagens definidas pelas expressões regulares a seguir. Implemente, para
+  <div class="question">
+    <p>1. Considere as linguagens definidas pelas expressões regulares a seguir. Implemente, para
       cada uma das linguagens, um autômato finito que reconheça cadeias pertencentes a
       linguagem. Esse autômato não deve conter não-determinismos, transições em vazio, estados
-      inacessíveis e nem estados inúteis.<br />
-    </li>
-    <hr />
+      inacessíveis e nem estados inúteis.</p>
     <img src="imgs/automatos/itemA.png">
     <div class="mb-4 row">
       <label for="item-a" class="col-sm-2 col-form-label">a) (ab*c*)*</label>
@@ -115,44 +118,8 @@
         </b>
       </div>
     </div>
-    <hr />
-    <li>
-      Implemente um autômato finito que reconheça todas as ocorrências da palavra computador
-      no texto T. O programa deve apontar em quais posições ocorreram o casamento exato da
-      palavra.
-    </li>
-    <div class="mb-3 row">
-      <label for="q2" class="col-sm-1 col-form-label">T:</label>
-      <div class="col-sm-6">
-        <input class="form-control" type="text" id="q2" />
-      </div>
-      <div class="col-sm-2">
-        <b>
-          <div id="q2Error" class="form-control-plaintext"></div>
-        </b>
-      </div>
-    </div>
-    <hr />
-    <li>
-      Implemente um transdutor finito (máquina de Moore ou Mealy) que, dada uma sequência de
-      moedas de 25 e 50 centavos e de 1 real, forneça uma lata de refrigerante quando a sequência
-      totalizar 1 real ou mais. Cada moeda inserida deverá corresponder a uma de duas saídas: 0,
-      se uma lata não pode ser (ainda) liberada, ou 1, se uma lata deve ser liberada.
-      <div class="mb-3 row">
-        <label for="q3" class="col-sm-1 col-form-label">Entrada:</label>
-        <div class="col-sm-6">
-          <input class="form-control" type="text" id="q3" />
-        </div>
-        <div class="col-sm-2">
-          <b>
-            <div id="q3Error" class="form-control-plaintext"></div>
-          </b>
-        </div>
-      </div>
-      <hr />
-    </li>
-
-    <script type="module" src="./js/automatoCreations.js"></script>
+  </div>
+  <script type="module" src="./js/automatonCreations.js"></script>
 </body>
 
 </html>

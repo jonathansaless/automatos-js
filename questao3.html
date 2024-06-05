@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./imgs/UFPA.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <title>Trabalho Autômatos</title>
+</head>
+
+<body>
+  <nav class="nav-bar">
+    <div class="logo">
+      <h1>Autômatos</h1>
+    </div>
+    <div class="nav-list">
+      <ul>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Questão 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="questao2.html" class="nav-link">Questão 2</a>
+        </li>
+      </ul>
+    </div>
+    <div class="mobile-menu-icon">
+      <button id="mobile-menu-button">
+        <img class="icon" src="./imgs/menu.svg" alt="" />
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <ul>
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">Questão 1</a>
+      </li>
+      <li class="nav-item">
+        <a href="questao2.html" class="nav-link">Questão 2</a>
+      </li>
+    </ul>
+  </div>
+  <script type="module" src="./js/mobilemenu.js"></script>
+  <header>
+    <img src="./imgs/UFPA.png" width="10%" />
+    <h5>
+      Universidade Federal do Pará<br />
+      Instituto de Ciências Exatas e Naturais<br />
+      Programa de Pós-Graduação em Ciência da Computação<br />
+      <b>Disciplina:</b> Teoria da Computação<br />
+      <b>Professor:</b> Reginaldo Santos<br />
+      <b>Equipe:</b> Jonathan Sales, Lindalvo Neto e Maria Líbia
+    </h5>
+    <br />
+  </header>
+  <div class="question">
+    <p>3. Implemente um transdutor finito (máquina de Moore ou Mealy) que, dada uma sequência de
+      moedas de 25 e 50 centavos e de 1 real, forneça uma lata de refrigerante quando a sequência
+      totalizar 1 real ou mais. Cada moeda inserida deverá corresponder a uma de duas saídas: 0,
+      se uma lata não pode ser (ainda) liberada, ou 1, se uma lata deve ser liberada.</p>
+    <div class="mb-3 row">
+      <label for="q3" class="col-sm-1 col-form-label">Entrada:</label>
+      <div class="col-sm-6">
+        <input class="form-control" type="text" id="q3" />
+      </div>
+      <div class="col-sm-2">
+        <b>
+          <div id="q3Error" class="form-control-plaintext"></div>
+        </b>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="./js/automatonQ2.js"></script>
+</body>
+
+</html>

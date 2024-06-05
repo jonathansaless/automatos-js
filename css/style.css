@@ -116,3 +116,7 @@ label {
 .nav-list.active {
     transform: translateX(0);
 }
+
+.question {
+    padding-left: 20px;
+}
