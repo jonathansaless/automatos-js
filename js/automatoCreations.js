@@ -37,7 +37,7 @@ class Automaton {
 
   addTransition(fromState, symbol, toState) {
     if (!this.alphabet.has(symbol)) {
-      throw new Error(`Símbolo ${symbol} não faz parte do alfabeto`);
+      console.log(`Símbolo < ${symbol} > não faz parte do alfabeto`);
     }
     this.states[fromState].addTransition(symbol, this.states[toState]);
   }
@@ -53,7 +53,7 @@ class Automaton {
       if (nextStates.length === 0) {
         return false;
       }
-      this.currentState = nextStates[0]; // Assume determinismo
+      this.currentState = nextStates[0];
     }
     return this.finalStates.has(this.currentState);
   }
@@ -64,14 +64,11 @@ function createAutomatonForItemA() {
   const alphabet = ["a", "b", "c"];
   const transitions = [
     ["q0", "a", "q1"],
-    ["q1", "a", "q1"],
-    ["q1", "b", "q2"],
-    ["q1", "c", "q3"],
-    ["q2", "b", "q2"],
+    ["q1", "b", "q1"],
+    ["q1", "b", "q1"],
+    ["q1", "c", "q2"],
     ["q2", "a", "q1"],
-    ["q2", "c", "q3"],
-    ["q3", "c", "q3"],
-    ["q3", "a", "q1"],
+    ["q2", "c", "q2"]
   ];
   const initialState = "q0";
   const finalStates = ["q0", "q1", "q2", "q3"];
@@ -85,6 +82,7 @@ function createAutomatonForItemA() {
   );
 }
 
+// ok
 function createAutomatonForItemB() {
   const states = ["q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7"];
   const alphabet = ["a", "b", "c"];
@@ -114,6 +112,7 @@ function createAutomatonForItemB() {
   );
 }
 
+// ok
 function createAutomatonForItemC() {
   const states = ["q0", "q1", "q2", "q3", "q4"];
   const alphabet = ["a", "b"];
@@ -137,24 +136,21 @@ function createAutomatonForItemC() {
     finalStates
   );
 }
-
+// ok
 function createAutomatonForItemD() {
-  const states = ["q0", "q1", "q2", "q3", "q4", "q5"];
+  const states = ["q0", "q1", "q2", "q3"];
   const alphabet = ["a", "b", "c"];
   const transitions = [
     ["q0", "a", "q1"],
-    ["q1", "a", "q3"],
-    ["q1", "c", "q2"],
-    ["q2", "c", "q2"],
-    ["q3", "a", "q3"],
-    ["q3", "b", "q4"],
-    ["q3", "c", "q2"],
-    ["q4", "b", "q4"],
-    ["q4", "a", "q5"],
-    ["q5", "c", "q2"],
+    ["q0", "b", "q2"],
+    ["q1", "a", "q1"],
+    ["q1", "b", "q2"],
+    ["q1", "c", "q3"],
+    ["q2", "a", "q3"],
+    ["q2", "b", "q2"],
   ];
   const initialState = "q0";
-  const finalStates = ["q1", "q2", "q3", "q5"];
+  const finalStates = ["q1", "q3"];
 
   return new Automaton(
     states,
