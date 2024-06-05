@@ -56,32 +56,70 @@ class Automaton {
         j++;
       }
       if (this.finalStates.has(currentState)) {
-        positions.push(i);
+        positions.push({ start: i + 1, end: j });
       }
     }
     return positions;
   }
 }
 
-const states = ["q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
-const alphabet = ["c", "o", "m", "p", "u", "t", "a", "d", "r"];
-const transitions = [
-  ["q0", "c", "q1"],
-  ["q1", "o", "q2"],
-  ["q2", "m", "q3"],
-  ["q3", "p", "q4"],
-  ["q4", "u", "q5"],
-  ["q5", "t", "q6"],
-  ["q6", "a", "q7"],
-  ["q7", "d", "q8"],
-  ["q8", "o", "q9"],
-  ["q9", "r", "q10"],
-];
-const initialState = "q0";
-const finalStates = ["q10"];
+function createAutomatonComputador() {
+  const states = [
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6",
+    "q7",
+    "q8",
+    "q9",
+    "q10",
+  ];
+  const alphabet = ["c", "o", "m", "p", "u", "t", "a", "d", "r"];
+  const transitions = [
+    ["q0", "c", "q1"],
+    ["q1", "o", "q2"],
+    ["q2", "m", "q3"],
+    ["q3", "p", "q4"],
+    ["q4", "u", "q5"],
+    ["q5", "t", "q6"],
+    ["q6", "a", "q7"],
+    ["q7", "d", "q8"],
+    ["q8", "o", "q9"],
+    ["q9", "r", "q10"],
+  ];
+  const initialState = "q0";
+  const finalStates = ["q10"];
 
-const automaton = new Automaton(states, alphabet, transitions, initialState, finalStates);
-const text = `O computador é uma máquina capaz de variados tipos de tratamento automático de informações ou processamento de dados. Entende-se por computador um sistema físico que realiza algum tipo de computação. Assumiu-se que os computadores pessoais e laptops são ícones da era da informação. O primeiro computador eletromecânico foi construído por Konrad Zuse (1910–1995). Atualmente, um microcomputador é também chamado computador pessoal ou ainda computador doméstico.`;
-const positions = automaton.process(text);
+  return new Automaton(
+    states,
+    alphabet,
+    transitions,
+    initialState,
+    finalStates
+  );
+}
 
-console.log(`Ocorrências da palavra "computador" nas posições:`, positions);
+const automaton = createAutomatonComputador();
+
+const q2TextArea = document.getElementById("q2");
+const q2Button = document.getElementById("q2-button");
+const q2Msg = document.getElementById("q2-msg");
+
+q2Button.addEventListener("click", () => {
+  const positions = automaton.process(q2TextArea.value);
+  console.log(`Ocorrências da palavra "computador" nas posições:`, positions);
+
+  if (positions.length == 0) {
+    q2Msg.innerHTML = "Nenhuma ocorrência da palavra computador encontrada";
+    q2Msg.style.color = "red";
+  } else {
+    q2Msg.innerHTML = "Ocorrências da palavra 'computador' nas posições:<br>";
+    positions.forEach(element => {
+      q2Msg.innerHTML += element.start + " - " + element.end + "<br>";
+    });
+    q2Msg.style.color = "green";
+  }
+});
