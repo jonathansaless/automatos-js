@@ -56,7 +56,7 @@ class Automaton {
         j++;
       }
       if (this.finalStates.has(currentState)) {
-        positions.push({ start: i + 1, end: j-2 });
+        positions.push({ start: i + 1, end: j - 2 });
       }
     }
     return positions;
@@ -118,18 +118,16 @@ const q2Button = document.getElementById("q2-button");
 const q2Msg = document.getElementById("q2-msg");
 
 q2Button.addEventListener("click", () => {
-  const textWithQuotes = "'"+q2TextArea.value+"'";
-  console.log(textWithQuotes);
+  const textWithQuotes = "'" + q2TextArea.value + "'";
   const positions = automaton.process(textWithQuotes);
-  // console.log(`Ocorrências da palavra "computador" nas posições:`, positions);
 
   if (positions.length == 0) {
-    q2Msg.innerHTML = "Nenhuma ocorrência da palavra computador encontrada";
+    q2Msg.innerHTML = "Nenhuma ocorrência da palavra 'computador' encontrada";
     q2Msg.style.color = "red";
   } else {
     q2Msg.innerHTML = "Ocorrências da palavra 'computador' nas posições:<br>";
-    positions.forEach(element => {
-      q2Msg.innerHTML += element.start + " - " + element.end + "<br>";
+    positions.forEach((element, index) => {
+      q2Msg.innerHTML += `Ocorrência ${index + 1} - Pos. ${element.start} até ${element.end}<br>`;
     });
     q2Msg.style.color = "green";
   }
