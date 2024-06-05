@@ -60,7 +60,7 @@ class Automaton {
 }
 
 function createAutomatonForItemA() {
-  const states = ["q0", "q1", "q2", "q3"];
+  const states = ["q0", "q1", "q2"];
   const alphabet = ["a", "b", "c"];
   const transitions = [
     ["q0", "a", "q1"],
@@ -71,7 +71,7 @@ function createAutomatonForItemA() {
     ["q2", "c", "q2"]
   ];
   const initialState = "q0";
-  const finalStates = ["q0", "q1", "q2", "q3"];
+  const finalStates = ["q0", "q1", "q2"];
 
   return new Automaton(
     states,
