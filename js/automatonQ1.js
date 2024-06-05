@@ -164,7 +164,7 @@ function createAutomatonForItemD() {
 document.addEventListener("DOMContentLoaded", () => {
   const automatonA = createAutomatonForItemA();
   const itemAInput = document.getElementById("item-a");
-  const itemAError = document.getElementById("item-a-error");
+  const itemAError = document.getElementById("item-a-msg");
 
   itemAInput.addEventListener("input", () => {
     const isValid = automatonA.process(itemAInput.value);
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const automatonB = createAutomatonForItemB();
   const itemBInput = document.getElementById("item-b");
-  const itemBError = document.getElementById("item-b-error");
+  const itemBError = document.getElementById("item-b-msg");
 
   itemBInput.addEventListener("input", () => {
     const isValid = automatonB.process(itemBInput.value);
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const automatonC = createAutomatonForItemC();
   const itemCInput = document.getElementById("item-c");
-  const itemCError = document.getElementById("item-c-error");
+  const itemCError = document.getElementById("item-c-msg");
 
   itemCInput.addEventListener("input", () => {
     const isValid = automatonC.process(itemCInput.value);
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const automatonD = createAutomatonForItemD();
   const itemDInput = document.getElementById("item-d");
-  const itemDError = document.getElementById("item-d-error");
+  const itemDError = document.getElementById("item-d-msg");
 
   itemDInput.addEventListener("input", () => {
     const isValid = automatonD.process(itemDInput.value);
