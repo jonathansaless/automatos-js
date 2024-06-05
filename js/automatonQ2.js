@@ -79,12 +79,13 @@ function createAutomatonComputador() {
     "q10",
     "q11"
   ];
-  const alphabet = ["\n", "'", " ", "c", "o", "m", "p", "u", "t", "a", "d", "r"];
+  const alphabet = ["\n", "'", " ", "c", "C", "o", "m", "p", "u", "t", "a", "d", "r"];
   const transitions = [
     ["q", "\n", "q0"],
     ["q", "'", "q0"],
     ["q", " ", "q0"],
     ["q0", "c", "q1"],
+    ["q0", "C", "q1"],
     ["q1", "o", "q2"],
     ["q2", "m", "q3"],
     ["q3", "p", "q4"],
