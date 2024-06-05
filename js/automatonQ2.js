@@ -56,7 +56,7 @@ class Automaton {
         j++;
       }
       if (this.finalStates.has(currentState)) {
-        positions.push({ start: i + 1, end: j });
+        positions.push({ start: i + 1, end: j-2 });
       }
     }
     return positions;
@@ -65,6 +65,7 @@ class Automaton {
 
 function createAutomatonComputador() {
   const states = [
+    "q",
     "q0",
     "q1",
     "q2",
@@ -76,9 +77,13 @@ function createAutomatonComputador() {
     "q8",
     "q9",
     "q10",
+    "q11"
   ];
-  const alphabet = ["c", "o", "m", "p", "u", "t", "a", "d", "r"];
+  const alphabet = ["\n", "'", " ", "c", "o", "m", "p", "u", "t", "a", "d", "r"];
   const transitions = [
+    ["q", "\n", "q0"],
+    ["q", "'", "q0"],
+    ["q", " ", "q0"],
     ["q0", "c", "q1"],
     ["q1", "o", "q2"],
     ["q2", "m", "q3"],
@@ -89,9 +94,12 @@ function createAutomatonComputador() {
     ["q7", "d", "q8"],
     ["q8", "o", "q9"],
     ["q9", "r", "q10"],
+    ["q10", "'", "q11"],
+    ["q10", " ", "q11"],
+    ["q10", "\n", "q11"],
   ];
-  const initialState = "q0";
-  const finalStates = ["q10"];
+  const initialState = "q";
+  const finalStates = ["q11"];
 
   return new Automaton(
     states,
@@ -109,8 +117,10 @@ const q2Button = document.getElementById("q2-button");
 const q2Msg = document.getElementById("q2-msg");
 
 q2Button.addEventListener("click", () => {
-  const positions = automaton.process(q2TextArea.value);
-  console.log(`Ocorrências da palavra "computador" nas posições:`, positions);
+  const textWithQuotes = "'"+q2TextArea.value+"'";
+  console.log(textWithQuotes);
+  const positions = automaton.process(textWithQuotes);
+  // console.log(`Ocorrências da palavra "computador" nas posições:`, positions);
 
   if (positions.length == 0) {
     q2Msg.innerHTML = "Nenhuma ocorrência da palavra computador encontrada";
