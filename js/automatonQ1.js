@@ -64,7 +64,8 @@ function createAutomatonForItemA() {
   const alphabet = ["a", "b", "c"];
   const transitions = [
     ["q0", "a", "q1"],
-    ["q1", "b", "q1"], // verificar
+    ["q1", "a", "q1"],
+    ["q1", "b", "q1"],
     ["q1", "c", "q2"],
     ["q2", "a", "q1"],
     ["q2", "c", "q2"]
