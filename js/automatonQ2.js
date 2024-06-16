@@ -65,7 +65,6 @@ class Automaton {
 
 function createAutomatonComputador() {
   const states = [
-    "q",
     "q0",
     "q1",
     "q2",
@@ -77,30 +76,31 @@ function createAutomatonComputador() {
     "q8",
     "q9",
     "q10",
-    "q11"
+    "q11",
+    "q12"
   ];
   const alphabet = ["\n", "'", " ", "c", "C", "o", "m", "p", "u", "t", "a", "d", "r"];
   const transitions = [
-    ["q", "\n", "q0"],
-    ["q", "'", "q0"],
-    ["q", " ", "q0"],
-    ["q0", "c", "q1"],
-    ["q0", "C", "q1"],
-    ["q1", "o", "q2"],
-    ["q2", "m", "q3"],
-    ["q3", "p", "q4"],
-    ["q4", "u", "q5"],
-    ["q5", "t", "q6"],
-    ["q6", "a", "q7"],
-    ["q7", "d", "q8"],
-    ["q8", "o", "q9"],
-    ["q9", "r", "q10"],
-    ["q10", "'", "q11"],
-    ["q10", " ", "q11"],
-    ["q10", "\n", "q11"],
+    ["q0", "\n", "q1"],
+    ["q0", "'", "q1"],
+    ["q0", " ", "q1"],
+    ["q1", "c", "q2"],
+    ["q1", "C", "q2"],
+    ["q2", "o", "q3"],
+    ["q3", "m", "q4"],
+    ["q4", "p", "q5"],
+    ["q5", "u", "q6"],
+    ["q6", "t", "q7"],
+    ["q7", "a", "q8"],
+    ["q8", "d", "q9"],
+    ["q9", "o", "q10"],
+    ["q10", "r", "q11"],
+    ["q11", "'", "q12"],
+    ["q11", " ", "q12"],
+    ["q11", "\n", "q12"],
   ];
-  const initialState = "q";
-  const finalStates = ["q11"];
+  const initialState = "q0";
+  const finalStates = ["q12"];
 
   return new Automaton(
     states,

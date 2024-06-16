@@ -68,7 +68,7 @@ function createAutomatonForItemA() {
     ["q1", "b", "q1"],
     ["q1", "c", "q2"],
     ["q2", "a", "q1"],
-    ["q2", "c", "q2"]
+    ["q2", "c", "q2"],
   ];
   const initialState = "q0";
   const finalStates = ["q0", "q1", "q2"];
@@ -82,7 +82,6 @@ function createAutomatonForItemA() {
   );
 }
 
-// ok
 function createAutomatonForItemB() {
   const states = ["q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7"];
   const alphabet = ["a", "b", "c"];
@@ -112,7 +111,6 @@ function createAutomatonForItemB() {
   );
 }
 
-// ok
 function createAutomatonForItemC() {
   const states = ["q0", "q1", "q2", "q3", "q4"];
   const alphabet = ["a", "b"];
@@ -136,7 +134,7 @@ function createAutomatonForItemC() {
     finalStates
   );
 }
-// ok
+
 function createAutomatonForItemD() {
   const states = ["q0", "q1", "q2", "q3"];
   const alphabet = ["a", "b", "c"];
@@ -162,68 +160,66 @@ function createAutomatonForItemD() {
   );
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const automatonA = createAutomatonForItemA();
-  const itemAInput = document.getElementById("item-a");
-  const itemAMsg = document.getElementById("item-a-msg");
+const automatonA = createAutomatonForItemA();
+const itemAInput = document.getElementById("item-a");
+const itemAMsg = document.getElementById("item-a-msg");
 
-  itemAInput.addEventListener("input", () => {
-    const isValid = automatonA.process(itemAInput.value);
+itemAInput.addEventListener("input", () => {
+  const isValid = automatonA.process(itemAInput.value);
 
-    if (!isValid) {
-      itemAMsg.textContent = "Rejeitado!";
-      itemAMsg.style.color = "red";
-    } else {
-      itemAMsg.textContent = "Aceito!";
-      itemAMsg.style.color = "green";
-    }
-  });
+  if (!isValid) {
+    itemAMsg.textContent = "Rejeitado!";
+    itemAMsg.style.color = "red";
+  } else {
+    itemAMsg.textContent = "Aceito!";
+    itemAMsg.style.color = "green";
+  }
+});
 
-  const automatonB = createAutomatonForItemB();
-  const itemBInput = document.getElementById("item-b");
-  const itemBMsg = document.getElementById("item-b-msg");
+const automatonB = createAutomatonForItemB();
+const itemBInput = document.getElementById("item-b");
+const itemBMsg = document.getElementById("item-b-msg");
 
-  itemBInput.addEventListener("input", () => {
-    const isValid = automatonB.process(itemBInput.value);
+itemBInput.addEventListener("input", () => {
+  const isValid = automatonB.process(itemBInput.value);
 
-    if (!isValid) {
-      itemBMsg.textContent = "Rejeitado!";
-      itemBMsg.style.color = "red";
-    } else {
-      itemBMsg.textContent = "Aceito!";
-      itemBMsg.style.color = "green";
-    }
-  });
+  if (!isValid) {
+    itemBMsg.textContent = "Rejeitado!";
+    itemBMsg.style.color = "red";
+  } else {
+    itemBMsg.textContent = "Aceito!";
+    itemBMsg.style.color = "green";
+  }
+});
 
-  const automatonC = createAutomatonForItemC();
-  const itemCInput = document.getElementById("item-c");
-  const itemCMsg = document.getElementById("item-c-msg");
+const automatonC = createAutomatonForItemC();
+const itemCInput = document.getElementById("item-c");
+const itemCMsg = document.getElementById("item-c-msg");
 
-  itemCInput.addEventListener("input", () => {
-    const isValid = automatonC.process(itemCInput.value);
+itemCInput.addEventListener("input", () => {
+  const isValid = automatonC.process(itemCInput.value);
 
-    if (!isValid) {
-      itemCMsg.textContent = "Rejeitado!";
-      itemCMsg.style.color = "red";
-    } else {
-      itemCMsg.textContent = "Aceito!";
-      itemCMsg.style.color = "green";
-    }
-  });
+  if (!isValid) {
+    itemCMsg.textContent = "Rejeitado!";
+    itemCMsg.style.color = "red";
+  } else {
+    itemCMsg.textContent = "Aceito!";
+    itemCMsg.style.color = "green";
+  }
+});
 
-  const automatonD = createAutomatonForItemD();
-  const itemDInput = document.getElementById("item-d");
-  const itemDMsg = document.getElementById("item-d-msg");
+const automatonD = createAutomatonForItemD();
+const itemDInput = document.getElementById("item-d");
+const itemDMsg = document.getElementById("item-d-msg");
 
-  itemDInput.addEventListener("input", () => {
-    const isValid = automatonD.process(itemDInput.value);
+itemDInput.addEventListener("input", () => {
+  const isValid = automatonD.process(itemDInput.value);
 
-    if (!isValid) {
-      itemDMsg.textContent = "Rejeitado!";
-      itemDMsg.style.color = "red";
-    } else {
-      itemDMsg.textContent = "Aceito!";
-      itemDMsg.style.color = "green";
-    }
-  });
+  if (!isValid) {
+    itemDMsg.textContent = "Rejeitado!";
+    itemDMsg.style.color = "red";
+  } else {
+    itemDMsg.textContent = "Aceito!";
+    itemDMsg.style.color = "green";
+  }
 });
