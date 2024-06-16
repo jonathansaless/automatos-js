@@ -148,6 +148,7 @@ function createAutomatonForItemD() {
     ["q1", "c", "q3"],
     ["q2", "a", "q3"],
     ["q2", "b", "q2"],
+    ["q3", "c", "q3"],
   ];
   const initialState = "q0";
   const finalStates = ["q1", "q3"];
