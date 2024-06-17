@@ -137,6 +137,7 @@ const cent25Button = document.getElementById("25-cent");
 const cent50Button = document.getElementById("50-cent");
 const cent100Button = document.getElementById("100-cent");
 const resetButton = document.getElementById("reset");
+const q3CoinsHistory = document.getElementById("history-moedas");
 const q3Msg = document.getElementById("q3-msg");
 
 var value = [];
@@ -145,9 +146,11 @@ cent25Button.addEventListener("click", () => {
   value.push("25");
   const { isValid, generatedString } = automaton.process(value);
   if (!isValid) {
+    q3CoinsHistory.textContent += "Moedas adicionadas: 25 " == "" ? q3CoinsHistory.textContent == "" : "25 ";
     q3Msg.textContent = "String inválida!";
     q3Msg.style.color = "red";
   } else {
+    q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 25 " : "25 ";
     q3Msg.textContent = generatedString;
     q3Msg.style.color = "green";
   }
@@ -156,11 +159,12 @@ cent25Button.addEventListener("click", () => {
 cent50Button.addEventListener("click", () => {
   value.push("50");
   let { isValid, generatedString } = automaton.process(value);
-  console.log(isValid, generatedString);
   if (!isValid) {
+    q3CoinsHistory.textContent += "Moedas adicionadas: 50 " == "" ? q3CoinsHistory.textContent == "" : "50 ";
     q3Msg.textContent = "String inválida!";
     q3Msg.style.color = "red";
   } else {
+    q3CoinsHistory.textContent += "Moedas adicionadas: 50 " == "" ? q3CoinsHistory.textContent == "" : "50 ";
     q3Msg.textContent = generatedString;
     q3Msg.style.color = "green";
   }
@@ -170,9 +174,11 @@ cent100Button.addEventListener("click", () => {
   value.push("100");
   const { isValid, generatedString } = automaton.process(value);
   if (!isValid) {
+    q3CoinsHistory.textContent += "Moedas adicionadas: 100 " == "" ? q3CoinsHistory.textContent == "" : "100 ";
     q3Msg.textContent = "String inválida!";
     q3Msg.style.color = "red";
   } else {
+    q3CoinsHistory.textContent += "Moedas adicionadas: 100 " == "" ? q3CoinsHistory.textContent == "" : "100 ";
     q3Msg.textContent = generatedString;
     q3Msg.style.color = "green";
   }
@@ -180,5 +186,6 @@ cent100Button.addEventListener("click", () => {
 
 resetButton.addEventListener("click", () => {
   value = [];
+  q3CoinsHistory.textContent = "";
   q3Msg.textContent = "";
 });
