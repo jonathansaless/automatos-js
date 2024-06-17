@@ -163,8 +163,9 @@ function createAutomatonForItemD() {
 const automatonA = createAutomatonForItemA();
 const itemAInput = document.getElementById("item-a");
 const itemAMsg = document.getElementById("item-a-msg");
+const itemAButton = document.getElementById("item-a-button");
 
-itemAInput.addEventListener("input", () => {
+itemAButton.addEventListener("click", () => {
   const isValid = automatonA.process(itemAInput.value);
 
   if (!isValid) {
@@ -179,8 +180,9 @@ itemAInput.addEventListener("input", () => {
 const automatonB = createAutomatonForItemB();
 const itemBInput = document.getElementById("item-b");
 const itemBMsg = document.getElementById("item-b-msg");
+const itemBButton = document.getElementById("item-b-button");
 
-itemBInput.addEventListener("input", () => {
+itemBButton.addEventListener("click", () => {
   const isValid = automatonB.process(itemBInput.value);
 
   if (!isValid) {
@@ -195,8 +197,9 @@ itemBInput.addEventListener("input", () => {
 const automatonC = createAutomatonForItemC();
 const itemCInput = document.getElementById("item-c");
 const itemCMsg = document.getElementById("item-c-msg");
+const itemCButton = document.getElementById("item-c-button");
 
-itemCInput.addEventListener("input", () => {
+itemCButton.addEventListener("click", () => {
   const isValid = automatonC.process(itemCInput.value);
 
   if (!isValid) {
@@ -211,8 +214,9 @@ itemCInput.addEventListener("input", () => {
 const automatonD = createAutomatonForItemD();
 const itemDInput = document.getElementById("item-d");
 const itemDMsg = document.getElementById("item-d-msg");
+const itemDButton = document.getElementById("item-d-button");
 
-itemDInput.addEventListener("input", () => {
+itemDButton.addEventListener("click", () => {
   const isValid = automatonD.process(itemDInput.value);
 
   if (!isValid) {

@@ -64,21 +64,7 @@ class Automaton {
 }
 
 function createAutomatonComputador() {
-  const states = [
-    "q0",
-    "q1",
-    "q2",
-    "q3",
-    "q4",
-    "q5",
-    "q6",
-    "q7",
-    "q8",
-    "q9",
-    "q10",
-    "q11",
-    "q12"
-  ];
+  const states = ["q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12"];
   const alphabet = ["\n", "'", " ", "c", "C", "o", "m", "p", "u", "t", "a", "d", "r"];
   const transitions = [
     ["q0", "\n", "q1"],
@@ -127,7 +113,9 @@ q2Button.addEventListener("click", () => {
   } else {
     q2Msg.innerHTML = "Ocorrências da palavra 'computador' nas posições:<br>";
     positions.forEach((element, index) => {
-      q2Msg.innerHTML += `Ocorrência ${index + 1} - Pos. ${element.start} até ${element.end}<br>`;
+      q2Msg.innerHTML += `Ocorrência ${index + 1} - Pos. ${element.start} até ${
+        element.end
+      }<br>`;
     });
     q2Msg.style.color = "green";
   }
