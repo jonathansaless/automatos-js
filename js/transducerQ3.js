@@ -146,7 +146,7 @@ cent25Button.addEventListener("click", () => {
   value.push("25");
   const { isValid, generatedString } = automaton.process(value);
   if (!isValid) {
-    q3CoinsHistory.textContent += "Moedas adicionadas: 25 " == "" ? q3CoinsHistory.textContent == "" : "25 ";
+    q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 25 " : "25 ";
     q3Msg.textContent = "String inválida!";
     q3Msg.style.color = "red";
   } else {
@@ -160,11 +160,11 @@ cent50Button.addEventListener("click", () => {
   value.push("50");
   let { isValid, generatedString } = automaton.process(value);
   if (!isValid) {
-    q3CoinsHistory.textContent += "Moedas adicionadas: 50 " == "" ? q3CoinsHistory.textContent == "" : "50 ";
+    q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 50 " : "50 ";
     q3Msg.textContent = "String inválida!";
     q3Msg.style.color = "red";
   } else {
-    q3CoinsHistory.textContent += "Moedas adicionadas: 50 " == "" ? q3CoinsHistory.textContent == "" : "50 ";
+    q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 50 " : "50 ";
     q3Msg.textContent = generatedString;
     q3Msg.style.color = "green";
   }
@@ -174,11 +174,11 @@ cent100Button.addEventListener("click", () => {
   value.push("100");
   const { isValid, generatedString } = automaton.process(value);
   if (!isValid) {
-    q3CoinsHistory.textContent += "Moedas adicionadas: 100 " == "" ? q3CoinsHistory.textContent == "" : "100 ";
+    q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 100 " : "100 ";
     q3Msg.textContent = "String inválida!";
     q3Msg.style.color = "red";
   } else {
-    q3CoinsHistory.textContent += "Moedas adicionadas: 100 " == "" ? q3CoinsHistory.textContent == "" : "100 ";
+    q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 100 " : "100 ";
     q3Msg.textContent = generatedString;
     q3Msg.style.color = "green";
   }
