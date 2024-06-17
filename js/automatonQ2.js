@@ -85,6 +85,8 @@ function createAutomatonComputador() {
     ["q11", " ", "q12"],
     ["q11", "\n", "q12"],
   ];
+
+
   const initialState = "q0";
   const finalStates = ["q12"];
 
@@ -100,11 +102,16 @@ function createAutomatonComputador() {
 const automaton = createAutomatonComputador();
 
 const q2TextArea = document.getElementById("q2");
-const q2Button = document.getElementById("q2-button");
 const q2Msg = document.getElementById("q2-msg");
+const q2Button = document.getElementById("q2-button");
 
 q2Button.addEventListener("click", () => {
-  const textWithQuotes = "'" + q2TextArea.value + "'";
+  let userInput = q2TextArea.value;
+  
+  if (userInput.includes("'")) {
+    userInput = userInput.replace(/'/g, '"');
+  }
+  const textWithQuotes = "'" + userInput + "'";
   const positions = automaton.process(textWithQuotes);
 
   if (positions.length == 0) {

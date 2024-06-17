@@ -85,19 +85,15 @@ class MealyTransducer {
       if (nextStates.length === 0) {
         return false;
       }
-
       generatedString += this.currentState.output[symbol];
-      console.log(generatedString);
       this.currentState = nextStates[0];
     }
-
     let currentStateIsFinal = this.finalStates.has(this.currentState);
-    console.log(currentStateIsFinal);
     return { isValid: currentStateIsFinal, generatedString };
   }
 }
 
-function createAutomatonTransducer() {
+function createTransducer() {
   const states = ["q0", "q1", "q2", "q3"];
   const alphabet = ["25", "50", "100"];
   const outputAlphabet = ["0", "1"];
@@ -131,7 +127,7 @@ function createAutomatonTransducer() {
   );
 }
 
-const automaton = createAutomatonTransducer();
+const automaton = createTransducer();
 
 const cent25Button = document.getElementById("25-cent");
 const cent50Button = document.getElementById("50-cent");
