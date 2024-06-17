@@ -11,10 +11,10 @@ Atividade Avaliativa da disciplina de Teoria da Computação, ministrada no Prog
 - HTML
 - CSS
 
-# Classes com as expressões regulares de cada questão
-- [Questão 1](./js/)
-- [Questão 2](./js/)
-- [Questão 3](./js/)
+# Classes com os autômatos e transdutor
+- [Questão 1](./js/automatonQ1.js)
+- [Questão 2](./js/automatonQ2.js)
+- [Questão 3](./js/transducerQ3.js)
 
 # Deploy do Sistema
 [https://jonathansaless.github.io/automatos-js/](https://jonathansaless.github.io/automatos-js/)

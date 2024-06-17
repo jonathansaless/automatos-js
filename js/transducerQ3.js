@@ -127,7 +127,7 @@ function createTransducer() {
   );
 }
 
-const automaton = createTransducer();
+const transducer = createTransducer();
 
 const cent25Button = document.getElementById("25-cent");
 const cent50Button = document.getElementById("50-cent");
@@ -140,7 +140,7 @@ var value = [];
 
 cent25Button.addEventListener("click", () => {
   value.push("25");
-  const { isValid, generatedString } = automaton.process(value);
+  const { isValid, generatedString } = transducer.process(value);
   if (!isValid) {
     q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 25 " : "25 ";
     q3Msg.textContent = "String inválida!";
@@ -154,7 +154,7 @@ cent25Button.addEventListener("click", () => {
 
 cent50Button.addEventListener("click", () => {
   value.push("50");
-  let { isValid, generatedString } = automaton.process(value);
+  let { isValid, generatedString } = transducer.process(value);
   if (!isValid) {
     q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 50 " : "50 ";
     q3Msg.textContent = "String inválida!";
@@ -168,7 +168,7 @@ cent50Button.addEventListener("click", () => {
 
 cent100Button.addEventListener("click", () => {
   value.push("100");
-  const { isValid, generatedString } = automaton.process(value);
+  const { isValid, generatedString } = transducer.process(value);
   if (!isValid) {
     q3CoinsHistory.textContent += q3CoinsHistory.textContent == "" ? "Moedas adicionadas: 100 " : "100 ";
     q3Msg.textContent = "String inválida!";
